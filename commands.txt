@@ -28,4 +28,11 @@
 
 #generate a model
 >bin/rails g model Restaurant name:string description:text
+>bin/rake db:migrate
+#update db
+>bin/rake db:migrate RAILS_ENV=test
+
+#run server
+>rails s
+
 
