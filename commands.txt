@@ -35,4 +35,17 @@
 #run server
 >rails s
 
+#no prob with bin rails or smth not need
+>bundle install --binstubs
 
+#add more columns to db
+>bin/rake rails:update:bin
+>bin/rails g migration AddPromotedToRestaurants promoted:boolean
+>bin/rake db:migrate
+
+#delete migraion
+>bin/rails d migration AddPromotedToRestaurants promoted:boolean
+
+#add   gem 'database_cleaner'  to Gemfile 
+#edit spec_helper
+>bin/rake spec
