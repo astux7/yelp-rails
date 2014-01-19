@@ -9,3 +9,7 @@
 #adds connection and changed if exist
 
 
+modify Gemfile
+>bundle
+#preparing testing env:
+>bin/rails generate rspec:install
