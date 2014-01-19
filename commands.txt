@@ -1,2 +1,11 @@
 >rails new yelp -d postgresql -T
 #no tests uni and database postgresql on new app yelp
+
+
+#add to ./config/database.yml changes
+>bin/rake db:create
+#creates a db
+>bin/rake db:migrate
+#adds connection and changed if exist
+
+
