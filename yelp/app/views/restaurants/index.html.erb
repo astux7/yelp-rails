@@ -6,5 +6,5 @@
 	<p><%= restaurant.description %></p>
 
 <%= link_to 'Edit this restaurant', edit_restaurant_path(restaurant) %>
-<%= link_to 'Delete this restaurant', restaurant_path(restaurant), method: :delete  %>
+<%= link_to 'Delete this restaurant', restaurant_path(restaurant), method: :delete  , data: { confirm: 'Are you sure?' }%>
 <% end %>
