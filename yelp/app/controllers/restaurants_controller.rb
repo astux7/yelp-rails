@@ -1,13 +1,12 @@
 class RestaurantsController < ApplicationController
 	def new
-
+       @restaurant = Restaurant.new
     end
 
     def create  
     	#raise params[:restaurant].inspect
         Restaurant.create params[:restaurant].permit(:name, :description)
     	redirect_to '/restaurants'
-
     end
 
     def index
