@@ -47,5 +47,6 @@
 >bin/rails d migration AddPromotedToRestaurants promoted:boolean
 
 #add   gem 'database_cleaner'  to Gemfile 
+>bundle
 #edit spec_helper
 >bin/rake spec
