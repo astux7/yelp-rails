@@ -23,5 +23,9 @@
 >bin/rake routes
 
 #add controller
->rails g controller restaurants
+>bin/rails g controller restaurants
+#add view, add action
+
+#generate a model
+>bin/rails g model Restaurant name:string description:text
 
