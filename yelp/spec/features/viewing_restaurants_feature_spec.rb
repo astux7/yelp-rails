@@ -1,6 +1,9 @@
 require 'spec_helper'
 
 describe 'retaurants index' do
+	before(:each) do
+		visit '/restaurants'
+	end
 	context 'with restaurants' do
 		it 'should display the names and descriptions of the restaurants' do
 			Restaurant.create(name: 'Nandos', description: 'Chiken')
