@@ -1,0 +1,2 @@
+>rails new yelp -d postgresql -T
+#no tests uni and database postgresql on new app yelp
