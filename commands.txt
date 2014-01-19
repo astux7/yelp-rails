@@ -9,9 +9,12 @@
 #adds connection and changed if exist
 
 
-modify Gemfile
+#modify Gemfile
 >bundle
 #preparing testing env:
 >bin/rails generate rspec:install
 
-modify spec_helper.rb
+#modify spec_helper.rb
+#add a test in features folder
+#run
+>bin/rake spec
