@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'reviewing' do
 	before do
-		sign_up
+		login
 
 		Restaurant.create(name: 'McDonalds', description: 'Bla bla bla')
 	end
