@@ -56,5 +56,20 @@
 >bin/rake db:migrate
 
 #add create table ratings
->bin/rails g model Reviews name:string content:text rating:integer
+>bin/rails g model Review name:string content:text rating:integer
 >bin/rake db:migrate
+
+#add resource to routes
+
+#add controller
+>bin/rails g controller reviews
+#add view, add action
+
+#add restaurant id to reviews
+>bin/rails g migration AddRestaurantIdToReviews restaurant:belongs_to
+>bin/rake db:migrate
+>bin/rake db:migrate RAILS_ENV=test
+
+#change the migration and do this command to cancel it
+>bin/rake db:rollback
+

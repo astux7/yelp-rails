@@ -1,0 +1,13 @@
+<%= form_for [@restaurant, @review] do |form| %>
+ 
+
+  <br>
+  <%= form.label :content, 'Review' %>
+  <%= form.text_area :content %>
+
+  <%= form.label :rating %>
+  <%= form.select :rating, options_for_select(@review.valid_ratings), include_blank: 'Select a rating' %>
+
+  <br>
+  <%= form.submit 'Submit' %>
+<% end %>
