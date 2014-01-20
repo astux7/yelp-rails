@@ -50,3 +50,11 @@
 >bundle
 #edit spec_helper
 >bin/rake spec
+
+#add extra column to db
+>bin/rails g migration AddRatingToRestaurants rating:integer
+>bin/rake db:migrate
+
+#add create table ratings
+>bin/rails g model Reviews name:string content:text rating:integer
+>bin/rake db:migrate

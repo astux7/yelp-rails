@@ -6,8 +6,13 @@ class RestaurantsController < ApplicationController
     def create  
     	#raise params[:restaurant].inspect
     	#safer using permit and say which field let to be changed
-        Restaurant.create params[:restaurant].permit(:name, :description)
-    	redirect_to '/restaurants'
+        @restaurant = Restaurant.create params[:restaurant].permit(:name, :description)
+
+        if @restaurant.save
+    	   redirect_to restaurants_path
+        else
+            render 'new'
+        end
     end
 
     def index
@@ -21,14 +26,19 @@ class RestaurantsController < ApplicationController
     def update
         @restaurant = Restaurant.find params[:id]
         @restaurant.update params[:restaurant].permit(:name, :description)
-        redirect_to '/restaurants'
+        redirect_to restaurants_path
     end
 
     def destroy 
         @restaurant = Restaurant.find params[:id]
         @restaurant.destroy
 
-        redirect_to '/restaurants'
+        redirect_to restaurants_path
     end
+
+    def show
+        @restaurant = Restaurant.find params[:id]
+    end
+
 end
 
