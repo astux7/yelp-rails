@@ -2,6 +2,7 @@
 <h4><%= link_to 'Add a review', new_restaurant_review_path(@restaurant) %>
 <p><%= @restaurant.description %></p>
 <% @restaurant.reviews.each do |review| %>
+Reviewer: <%= review.user.email %><br>
   <p>
   <%= review.content %> - <%= review.rating %></p>
 <% end %>

@@ -85,4 +85,13 @@
 >bin/rails g devise user
 >bin/rake db:migrate
 >bin/rake db:migrate RAILS_ENV=test
+#add a links to sing_in/up to layout of app
+
+#u want to see the views
+>bin/rails g devise:views
+
+#add user to reviews and do migration
+>bin/rails g migration AddUserIdToReviews user:belongs_to
+>bin/rake db:migrate
+>bin/rake db:migrate RAILS_ENV=test
 

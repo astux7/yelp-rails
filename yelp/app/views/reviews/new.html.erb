@@ -12,7 +12,7 @@
 
 <%= form_for [@restaurant, @review] do |form| %>
  
-
+   Reviewer: <%= current_user.email %>
   <br>
   <%= form.label :content, 'Review' %>
   <%= form.text_area :content %>
