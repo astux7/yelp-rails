@@ -80,6 +80,9 @@
 >bin/rails generate divise:install
 #sometimes need to add 
 >bin/rake rails:update:bin  
+#add root dir to routes 
+#add notice and alert p to layout in views
+>bin/rails g devise user
 >bin/rake db:migrate
 >bin/rake db:migrate RAILS_ENV=test
 
