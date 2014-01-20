@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe 'editing restaurants' do
 	before do
+	    sign_up
 		Restaurant.create(name: 'McDonalds', description: 'Bla bla bla')
 		visit '/restaurants'
 	end

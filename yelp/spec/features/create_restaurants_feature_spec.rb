@@ -1,6 +1,10 @@
 require 'spec_helper'
 
 describe 'creating restaurants' do
+  
+  before do
+    sign_up
+  end
 
   context 'given a name and description' do
 
