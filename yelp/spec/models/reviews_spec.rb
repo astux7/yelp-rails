@@ -12,7 +12,11 @@ describe Review do
 	    context 'an unpromoted restaurant' do
 
 	      it 'can be rated up to 4 stars' do
+	      	#review = Review.new(rating: 4, restaurant_id: bk.id)
 	        review = Review.new(rating: 4, restaurant: bk)
+	        #review = Review.new(rating: 4)
+	        #restaurant.reviews << review
+	        #same as top of them
 	        expect(review).to be_valid
 	      end
 
