@@ -1,4 +1,5 @@
 >rails new yelp -d postgresql -T
+>bin/rake rails:update:bin   
 #no tests uni and database postgresql on new app yelp
 
 
@@ -72,4 +73,13 @@
 
 #change the migration and do this command to cancel it
 >bin/rake db:rollback
+
+#gem device to gemfile (for user and other models)
+>bundle
+#generate install
+>bin/rails generate divise:install
+#sometimes need to add 
+>bin/rake rails:update:bin  
+>bin/rake db:migrate
+>bin/rake db:migrate RAILS_ENV=test
 

@@ -34,6 +34,8 @@ gem 'sdoc',          group: :doc, require: false
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/jonleighton/spring
 gem 'spring',        group: :development
 
+#for user model
+gem 'devise'
 
 #only test and development env cause in production we don't need it
 group :test, :development do
