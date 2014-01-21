@@ -4,6 +4,7 @@ describe 'retaurants index' do
 
 	context 'with restaurants' do
 		before(:each) do
+			login_admin
 			@mcd = create(:restaurant, name: 'Mcdonalds') 
 		end
 		it 'should display the names and descriptions of the restaurants' do

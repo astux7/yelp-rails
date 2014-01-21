@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'editing restaurants' do
 	before do
-	    login
+	    login_admin
 		create(:restaurant) 
 		visit '/restaurants'
 	end

@@ -5,8 +5,7 @@ class RestaurantsController < ApplicationController
     end
 
     def create  
-        authenticate_user!
-    	#raise params[:restaurant].inspect
+        #raise params[:restaurant].inspect
     	#safer using permit and say which field let to be changed
         @restaurant = Restaurant.create params[:restaurant].permit(:name, :description, :image_url, :promoted, :address)
 
@@ -22,8 +21,7 @@ class RestaurantsController < ApplicationController
     end
 
     def edit 
-        authenticate_user!
-    	@restaurant = Restaurant.find params[:id]
+       @restaurant = Restaurant.find params[:id]
     end
 
     def update
@@ -36,7 +34,6 @@ class RestaurantsController < ApplicationController
     end
 
     def destroy 
-        authenticate_user!
         @restaurant = Restaurant.find params[:id]
         @restaurant.destroy
 

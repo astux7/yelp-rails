@@ -3,7 +3,7 @@ require 'spec_helper'
 describe 'creating restaurants' do
   
   before do
-    login
+    login_admin
   end
 
   context 'given a name and description' do

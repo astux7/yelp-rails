@@ -54,10 +54,11 @@
 </dd>
 </dl>
 <hr/>
-<% if user_signed_in? %>
-<% if !current_user.reviewed?(@restaurant) %>
+
+<% if user_signed_in? && !current_user.reviewed?(@restaurant) %>
 <%= link_to 'Add a review', new_restaurant_review_path(@restaurant), class: ['btn', 'btn-default'] %>
 <% end %>
+<% if admin_signed_in? %>
 <%= link_to t('.edit', :default => t("helpers.links.edit")),
               edit_restaurant_path(@restaurant), :class => 'btn btn-default' %>
 <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
@@ -74,7 +75,8 @@
   <% @restaurant.reviews.each do |review| %>
     <div class='col-sm-6 alert <%= review_color(review) %>'>
       <h4>Reviewer: <%= review.user.email %></h4>
-      <%= review.content %> - <%= star_rating review %>
+      <%= review.name %> - <%= star_rating review %><br />
+       <%= review.content %>
     </div>
   <% end %>
 </div>
