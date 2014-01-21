@@ -5,10 +5,10 @@
 	</div>
 
 <% @restaurant.reviews.each do |review| %>
-<div class="alert <%= review_color(review) %>">
+<%= content_tag  :div, class: ['alert', review_color(review)] do%>
 Reviewer: <%= review.user.email %><br>
 
   <p>
   <%= review.content %> - <%= star_rating review %></p>
-  </div>
+  <% end %>
 <% end %>
