@@ -28,8 +28,11 @@ class RestaurantsController < ApplicationController
 
     def update
         @restaurant = Restaurant.find params[:id]
-        @restaurant.update params[:restaurant].permit(:name, :description, :image_url, :promoted, :address)
-        redirect_to restaurants_path
+        if @restaurant.update params[:restaurant].permit(:name, :description, :image_url, :promoted, :address)
+            redirect_to restaurants_path
+        else
+            render 'edit'
+        end
     end
 
     def destroy 

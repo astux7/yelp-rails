@@ -16,6 +16,9 @@
     </tr>
   </thead>
   <tbody>
+    <% if @restaurants.none? %>
+      No restaurants yet!
+    <% end %>
     <% @restaurants.each do |restaurant| %>
       <tr>
         <td><%= link_to restaurant.id, restaurant_path(restaurant) %>

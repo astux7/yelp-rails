@@ -4,9 +4,9 @@ describe Restaurant do
   
   describe '.avarange_rating' do
     #lazely evealuated not work until ref to it
-  	let(:restaurant) { Restaurant.create(name: 'Burger King', description: 'The food here is totally awesome blah blah!') }
+  	let(:restaurant) { create(:restaurant) }
     #before each test will be created everytime even not using
-    let!(:new_restaurant){ create(:restaurant) }
+    #let!(:new_restaurant){ create(:restaurant) }
     context 'no ratings' do
       it 'returns "Unrated"' do
         expect(restaurant.average_rating).to eq 'Unrated'

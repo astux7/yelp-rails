@@ -4,7 +4,7 @@ describe 'retaurants index' do
 
 	context 'with restaurants' do
 		before(:each) do
-			create(:restaurant, name: 'Mcdonalds') 
+			@mcd = create(:restaurant, name: 'Mcdonalds') 
 		end
 		it 'should display the names and descriptions of the restaurants' do
 			
@@ -16,7 +16,7 @@ describe 'retaurants index' do
 		it 'has individual pages for each restaurant' do
 	        visit '/restaurants'
 
-	        click_link 'Mcdonalds'
+	        click_link @mcd.id
 	        expect(page).to have_content 'Restaurant page for Nandos'
 	    end
 

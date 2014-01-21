@@ -122,6 +122,7 @@
 >bin/rails g bootstrap:themed reviews
 
 #>rails generate devise:views users
+#uncomment line in  config/devise.rb
 
 #add gem geocoder to gemfile
 >bundle

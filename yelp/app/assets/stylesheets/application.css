@@ -14,3 +14,18 @@
  *= require_tree .
  *= require_self
  */
+ footer {
+ 	height: 40px;
+ 	margin-top: 20px;
+ 	vertical-align: bottom;
+ }
+ #error_explanation {
+ 	background-color: red;
+ 	border-radius: 25px;
+ 	margin: 15px;
+ 	padding: 10px;
+ }
+#error_explanation h2 {
+	font-size: 16px;
+	color: white;
+}

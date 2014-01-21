@@ -8,12 +8,15 @@
   <dd><%= @restaurant.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
   <dd><%= @restaurant.description %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:address) %>:</strong></dt>
+  <dd><%= @restaurant.address %></dd>
   <dt><strong><%= model_class.human_attribute_name(:promoted) %>:</strong></dt>
   <dd><%= @restaurant.promoted == true ? "Yap" : "Nope" %></dd>
   <dt><strong><%= model_class.human_attribute_name(:rating) %>:</strong></dt>
   <dd><%= star_rating @restaurant %></dd>
   <dt><strong><%= model_class.human_attribute_name(:image_url) %>:</strong>
-  <div class='restaurant-image'><img src="<%=  @restaurant.image_url %>" />
+  <div class='restaurant-image'><img src=
+    "<%= @restaurant.image_url %>"
   </div>
   </dt>
   <dd><%= @restaurant.image_url %></dd>
@@ -22,7 +25,9 @@
 <dt>&nbsp;</dt>
   
   <dd>
+     <% if @restaurant.latitude && @restaurant.longitude %>
     <div id="map">
+     
       <script>
         var map = new GMaps({
           div: '#map',
@@ -40,7 +45,12 @@
 
         });
       </script>
+
+
     </div>
+    <% else %>
+    No Map
+    <% end %>
 </dd>
 </dl>
 <hr/>
