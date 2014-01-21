@@ -90,6 +90,7 @@
 #u want to see the views
 >bin/rails g devise:views
 
+
 #add user to reviews and do migration
 >bin/rails g migration AddUserIdToReviews user:belongs_to
 >bin/rake db:migrate
@@ -105,3 +106,8 @@
 #app/assets dir sit css and js get loaded by abc
 #add Gem in Gemfile and do
 >bin/rails g bootstrap:install static
+
+#generate application layout - rename old
+>bin/rails g bootstrap:layout application
+#generate models like reviews or restaurant
+>bin/rails g bootstrap:themed [RESOURCE_NAME]

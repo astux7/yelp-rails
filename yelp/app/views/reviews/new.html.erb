@@ -21,5 +21,5 @@
   <%= form.select :rating, options_for_select(@review.valid_ratings), include_blank: 'Select a rating' %>
 
   <br>
-  <%= form.submit 'Submit' %>
+  <%= form.button 'Submit', class: 'btn btn-success' %>
 <% end %>
