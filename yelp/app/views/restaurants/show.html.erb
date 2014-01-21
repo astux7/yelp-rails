@@ -14,15 +14,34 @@
   <dd><%= star_rating @restaurant %></dd>
   <dt><strong><%= model_class.human_attribute_name(:image_url) %>:</strong>
   <div class='restaurant-image'><img src="<%=  @restaurant.image_url %>" />
-  </div></dt>
+  </div>
+  </dt>
   <dd><%= @restaurant.image_url %></dd>
-</dl>
-<div class='restaurant-map'>
-  <strong><%= model_class.human_attribute_name(:map) %>:
-</dt>
-  <dd><div id="map">
-fdf
-</div></dd>
+
+
+<dt>&nbsp;</dt>
+  
+  <dd>
+    <div id="map">
+      <script>
+        var map = new GMaps({
+          div: '#map',
+          lat: '<%= @restaurant.latitude %>',
+          lng: '<%= @restaurant.longitude %>'
+        } );
+
+        map.addMarker({
+          lat: <%= @restaurant.latitude %>,
+          lng: <%= @restaurant.longitude %>,
+          title: '<%= @restaurant.name %>',
+          infoWindow: {
+            content: ' <%= @restaurant.address %>'
+          }
+
+        });
+      </script>
+    </div>
+</dd>
 </dl>
 <hr/>
 <% if user_signed_in?%>

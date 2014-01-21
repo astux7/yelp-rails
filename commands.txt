@@ -129,3 +129,4 @@
 >bin/rails g migration AddAddressFieldsToRestaurants address:text latitude:float longitude:float
 >bin/rake db:migrate
 >bin/rake db:migrate RAILS_ENV=test
+#add lines in controller, add address and  get gmaps from github  gmaps.js
