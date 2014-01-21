@@ -3,5 +3,11 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  has_many :review
+  has_many :reviews
+
+  def reviewed?(restaurant)
+  	reviews.where(restaurant_id: restaurant.id).any?
+  	#same
+  	#reviews.where(restaurant: restaurant).any?
+  end	
 end

@@ -37,12 +37,14 @@ gem 'spring',        group: :development
 #for user model
 gem 'devise'
 
-#for test 
+#for test prepare not to repeat
 gem 'factory_girl_rails', "~> 4.0"
 
 #for css
 gem "twitter-bootstrap-rails", github: 'seyhunak/twitter-bootstrap-rails', branch: 'bootstrap3'
 
+#for geocoder location
+gem 'geocoder'
 
 #only test and development env cause in production we don't need it
 group :test, :development do

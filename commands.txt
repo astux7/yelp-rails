@@ -121,5 +121,11 @@
 >bin/rails g bootstrap:themed restaurants
 >bin/rails g bootstrap:themed reviews
 
->rails generate devise:views users
+#>rails generate devise:views users
 
+#add gem geocoder to gemfile
+>bundle
+#add new columns to db
+>bin/rails g migration AddAddressFieldsToRestaurants address:text latitude:float longitude:float
+>bin/rake db:migrate
+>bin/rake db:migrate RAILS_ENV=test

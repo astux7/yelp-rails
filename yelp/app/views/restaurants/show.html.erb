@@ -17,8 +17,18 @@
   </div></dt>
   <dd><%= @restaurant.image_url %></dd>
 </dl>
-<% if user_signed_in? %>
+<div class='restaurant-map'>
+  <strong><%= model_class.human_attribute_name(:map) %>:
+</dt>
+  <dd><div id="map">
+fdf
+</div></dd>
+</dl>
+<hr/>
+<% if user_signed_in?%>
+<% if !current_user.reviewed?(@restaurant) %>
 <%= link_to 'Add a review', new_restaurant_review_path(@restaurant), class: ['btn', 'btn-default'] %>
+<% end %>
 <%= link_to t('.edit', :default => t("helpers.links.edit")),
               edit_restaurant_path(@restaurant), :class => 'btn btn-default' %>
 <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
