@@ -24,7 +24,7 @@ describe Restaurant do
     context 'multiple ratings' do
       it 'returns an average of those ratings' do
         restaurant.reviews << Review.new(rating: 2)
-        restaurant.reviews << Review.new(rating: 4)
+        restaurant.reviews << Review.new(rating: 4, user: create(:user))
 
         expect(restaurant.average_rating).to eq 3
       end

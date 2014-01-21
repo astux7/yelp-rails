@@ -54,7 +54,7 @@
 </dd>
 </dl>
 <hr/>
-<% if user_signed_in?%>
+<% if user_signed_in? %>
 <% if !current_user.reviewed?(@restaurant) %>
 <%= link_to 'Add a review', new_restaurant_review_path(@restaurant), class: ['btn', 'btn-default'] %>
 <% end %>

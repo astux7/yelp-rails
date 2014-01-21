@@ -122,7 +122,8 @@
 >bin/rails g bootstrap:themed reviews
 
 #>rails generate devise:views users
-#uncomment line in  config/devise.rb
+#uncomment line in  config/devise.rb but is not need just add css
+>bin/rails g bootstrap:themed users 
 
 #add gem geocoder to gemfile
 >bundle
@@ -131,3 +132,12 @@
 >bin/rake db:migrate
 >bin/rake db:migrate RAILS_ENV=test
 #add lines in controller, add address and  get gmaps from github  gmaps.js
+
+#adding admin
+>bin/rails g devise admin
+>bin/rake db:migrate
+>bin/rake db:migrate RAILS_ENV=test
+#add routes
+>rails generate devise:views admins
+
+
