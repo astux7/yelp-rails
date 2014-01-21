@@ -37,6 +37,9 @@ gem 'spring',        group: :development
 #for user model
 gem 'devise'
 
+#for test 
+gem 'factory_girl_rails', "~> 4.0"
+
 #only test and development env cause in production we don't need it
 group :test, :development do
 	gem 'rspec-rails'

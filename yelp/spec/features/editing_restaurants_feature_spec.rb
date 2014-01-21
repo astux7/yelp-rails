@@ -3,7 +3,7 @@ require 'spec_helper'
 describe 'editing restaurants' do
 	before do
 	    login
-		Restaurant.create(name: 'McDonalds', description: 'Bla bla bla')
+		create(:restaurant) 
 		visit '/restaurants'
 	end
 	it 'can change the name of a restaurant' do

@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Review do
 	describe '.rating' do
-	    let(:bk) { Restaurant.create(name: 'Burger King', description: 'The food here is totally awesome blah blah!') }
+	    let(:bk) { create(:restaurant)}
 
 	    it 'cannot be less than 1 star' do
 	        review = Review.new(rating: 0, restaurant: bk)

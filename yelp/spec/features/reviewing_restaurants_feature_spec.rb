@@ -3,13 +3,12 @@ require 'spec_helper'
 describe 'reviewing' do
 	before do
 		login
-
-		Restaurant.create(name: 'McDonalds', description: 'Bla bla bla')
+		create(:restaurant) 
 	end
 
 	it 'can add a review to a restaurant' do
 		visit '/restaurants'
-		click_link 'McDonalds'
+		click_link 'Nandos'
 		click_link 'Add a review'
 
 		#fill_in 'Name', with: 'Asta'
