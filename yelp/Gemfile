@@ -40,6 +40,10 @@ gem 'devise'
 #for test 
 gem 'factory_girl_rails', "~> 4.0"
 
+#for css
+gem "twitter-bootstrap-rails", github: 'seyhunak/twitter-bootstrap-rails', branch: 'bootstrap3'
+
+
 #only test and development env cause in production we don't need it
 group :test, :development do
 	gem 'rspec-rails'

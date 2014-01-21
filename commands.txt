@@ -100,3 +100,8 @@
 
 #add factory_girl gem for make not dry testing code
 #add to spec_helper some lines 
+
+#bootstrap for css js
+#app/assets dir sit css and js get loaded by abc
+#add Gem in Gemfile and do
+>bin/rails g bootstrap:install static
