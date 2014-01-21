@@ -8,7 +8,7 @@ class RestaurantsController < ApplicationController
         authenticate_user!
     	#raise params[:restaurant].inspect
     	#safer using permit and say which field let to be changed
-        @restaurant = Restaurant.create params[:restaurant].permit(:name, :description, :image_url)
+        @restaurant = Restaurant.create params[:restaurant].permit(:name, :description, :image_url, :promoted)
 
         if @restaurant.save
     	   redirect_to restaurants_path
@@ -28,7 +28,7 @@ class RestaurantsController < ApplicationController
 
     def update
         @restaurant = Restaurant.find params[:id]
-        @restaurant.update params[:restaurant].permit(:name, :description, :image_url)
+        @restaurant.update params[:restaurant].permit(:name, :description, :image_url, :promoted)
         redirect_to restaurants_path
     end
 

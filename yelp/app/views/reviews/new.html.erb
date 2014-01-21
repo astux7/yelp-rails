@@ -1,25 +1,5 @@
-<% if @review.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@review.errors.count, "error") %> prohibited this post from being saved:</h2>
- 
-    <ul>
-    <% @review.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-  </div>
-<% end %>
-
-<%= form_for [@restaurant, @review] do |form| %>
- 
-   Reviewer: <%= current_user.email %>
-  <br>
-  <%= form.label :content, 'Review' %>
-  <%= form.text_area :content %>
-
-  <%= form.label :rating %>
-  <%= form.select :rating, options_for_select(@review.valid_ratings), include_blank: 'Select a rating' %>
-
-  <br>
-  <%= form.button 'Submit', class: 'btn btn-success' %>
-<% end %>
+<%- model_class = Review -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => model_class.model_name.human.titleize %></h1>
+</div>
+<%= render :partial => 'form' %>

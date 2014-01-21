@@ -1,13 +1,37 @@
-<%= form_for @restaurant do |form| %>
-	<%= form.label :name %>
-	<%= form.text_field :name %>
-
-	<%= form.label :description %>
-	<%= form.text_area :description %>
-
-	<%= form.label :image_url %>
-	<%= form.text_field :image_url %>
-
-	<%= form.submit %>
-
+<%= form_for @restaurant, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :description, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :description, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :promoted, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :promoted, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :rating, :class => 'control-label' %>
+    <div class="controls">
+      <%= star_rating @restaurant %>    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :image_url, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :image_url, :class => 'text_field' %>
+    </div>
+  </div>
+<hr>
+  
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            restaurants_path, :class => 'btn btn-default' %>
+ 
 <% end %>

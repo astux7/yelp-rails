@@ -117,7 +117,9 @@
 >bin/rails g migration AddImageUrlToRestaurant image_url:string
 >bin/rake db:migrate
 >bin/rake db:migrate RAILS_ENV=test
+#generate themed overides old - so renamed them
+>bin/rails g bootstrap:themed restaurants
+>bin/rails g bootstrap:themed reviews
 
-
-
+>rails generate devise:views users
 

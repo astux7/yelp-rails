@@ -1,0 +1,14 @@
+<h1>Restaurant page for <%= @restaurant.name %></h1>
+<h4><%= link_to 'Add a review', new_restaurant_review_path(@restaurant) %>
+<p><%= @restaurant.description %></p>
+<div class='restaurant-image col-md-4'><%=image_tag  @restaurant.image_url %>
+	</div>
+
+<% @restaurant.reviews.each do |review| %>
+<%= content_tag  :div, class: ['alert', review_color(review)] do%>
+Reviewer: <%= review.user.email %><br>
+
+  <p>
+  <%= review.content %> - <%= star_rating review %></p>
+  <% end %>
+<% end %>
