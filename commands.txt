@@ -111,3 +111,13 @@
 >bin/rails g bootstrap:layout application
 #generate models like reviews or restaurant
 >bin/rails g bootstrap:themed [RESOURCE_NAME]
+
+
+#add image link to database
+>bin/rails g migration AddImageUrlToRestaurant image_url:string
+>bin/rake db:migrate
+>bin/rake db:migrate RAILS_ENV=test
+
+
+
+
