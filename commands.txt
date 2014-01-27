@@ -122,7 +122,8 @@
 >bin/rails g bootstrap:themed reviews
 
 #>rails generate devise:views users
-#uncomment line in  config/devise.rb but is not need just add css
+#uncomment line in  config/init../devise.rb but is not need just add css   config.scoped_views = true
+
 >bin/rails g bootstrap:themed users 
 
 #add gem geocoder to gemfile
@@ -140,4 +141,5 @@
 #add routes
 >rails generate devise:views admins
 
-
+#delete controller
+#bin/rails d controller name

@@ -1,53 +1,38 @@
 <%- model_class = Restaurant -%>
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+ <p> People use Yelp to search for everything from the city's tastiest burger to the most renowned cardiologist. What will you uncover in your neighborhood?</p>
 </div>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:name) %></th>
-      <th><%= model_class.human_attribute_name(:description) %></th>
-      <th><%= model_class.human_attribute_name(:promoted) %></th>
-      <th><%= model_class.human_attribute_name(:rating) %></th>
-      <th><%= model_class.human_attribute_name(:image_url) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% if @restaurants.none? %>
-      No restaurants yet!
-    <% end %>
-    <% @restaurants.each do |restaurant| %>
-      <tr>
-        <td><%= link_to restaurant.id, restaurant_path(restaurant) %>
-          
-        </td>
-        <td><%= restaurant.name %></td>
-        <td><%= truncate restaurant.description, length: 140 %></td>
-        <td><%= restaurant.promoted == true ? "Yap" : "Nope" %></td>
-        <td><%= star_rating restaurant %></td>
-        <td><div class='restaurant-image'><img src="<%=  restaurant.image_url %>" />
-  </div></td>
-        <td><%= time_ago_in_words restaurant.created_at %> ago</td>
-        <td>
-          <% if admin_signed_in? %>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_restaurant_path(restaurant), :class => 'btn btn-default btn-xs' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      restaurant_path(restaurant),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-xs btn-danger' %>
-          <% end %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<% if admin_signed_in? %>
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_restaurant_path,
-            :class => 'btn btn-primary' %>
-<% end %>
+
+<div class='row'>
+
+ <% @restaurants.each do |restaurant| %>
+
+  <div class='col-sm-5 restaurant <%= restaurant.promoted == true ? "promoted" : "not-promoted" %>'>
+    
+    <a href="<%= restaurant_path(restaurant)%>">
+
+      <span class="stars"> <%= star_rating restaurant %></span>
+      <h4><%= restaurant.name %> </h4>
+     
+      <div class='restaurant-image'>
+       
+        <% if !restaurant.image_url.blank? %>
+        <img src="<%=  restaurant.image_url %>" />
+        <% else %>
+        <%= image_tag "no-photo.jpg" %>
+        <% end %>
+        <p><%= truncate restaurant.description, length: 140 %></p>
+      </div>
+
+      <span class="time"><%= time_ago_in_words restaurant.created_at %> ago</span>
+      <%= render :partial => 'admin_restaurant_control', :locals => {:restaurant => restaurant} %>
+
+    </a>
+
+ </div>
+
+<%end%>
+
+</div>
+

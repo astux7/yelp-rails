@@ -1,0 +1,23 @@
+ <% if @restaurant.latitude && @restaurant.longitude %>
+  <div id="map">
+    <script>
+      var map = new GMaps({
+        div: '#map',
+        lat: '<%= @restaurant.latitude %>',
+        lng: '<%= @restaurant.longitude %>'
+      } );
+
+      map.addMarker({
+        lat: <%= @restaurant.latitude %>,
+        lng: <%= @restaurant.longitude %>,
+        title: '<%= @restaurant.name %>',
+        infoWindow: {
+          content: ' <%= @restaurant.address %>'
+        }
+
+      });
+    </script>
+  </div> 
+  <% else %>
+    No Map
+  <% end %>

@@ -1,7 +1,7 @@
 module ReviewsHelper
 
 def star_rating(review)
-    rating = review.rating
+    rating = review.rating.to_i
     return 'Unrated' if rating == 'Unrated'
 
     empty = 5 - rating

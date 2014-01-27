@@ -5,6 +5,11 @@
 .restaurant-image img{
   	//max-width:100%;
   	width: 100px;
+    float: left;
+    margin: 10px;
+}
+.restaurant-image{
+    height: 100px;
 }
 #map {
 	width: 420px;
@@ -12,4 +17,71 @@
 	display: block;
 	height: 420px;
 	margin: 10px;
+}
+.promoted {
+	border: 2px solid #003266;
+	border-radius: 15px;
+	padding: 10px;
+	margin: 5px;
+	background-color: #007fff;
+  box-shadow: 8px 8px 5px #888888;
+}
+
+.promoted a{
+  color: #fff;
+}
+
+.promoted .btn-default {
+  color: #000;
+}
+.not-promoted{
+	border: 2px solid #7fbfff;
+	border-radius: 15px;
+	padding: 10px;
+	margin: 5px;
+	background-color: #e5f2ff;
+  box-shadow: 8px 8px 5px #888888;
+}
+
+.not-promoted .stars{
+	color: #428BCA;
+
+}
+.promoted .stars {
+	color: #000066;
+
+}
+
+.restaurant a{
+  outline: none;
+  text-decoration: none;
+}
+
+.stars{
+  float: right;
+  margin: 10px;
+}
+
+.restaurant div {
+  color: black;
+}
+
+.time{
+  float: right;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.restaurant a h4 {
+  font-size: 16px;
+  font-weight: bold;
+  text-transform:capitalize;
+}
+
+.rating {
+  float: right;
+}
+
+.logo {
+  max-width: 100px;
 }

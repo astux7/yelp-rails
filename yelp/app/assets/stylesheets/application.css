@@ -29,3 +29,13 @@
 	font-size: 16px;
 	color: white;
 }
+.top-reviews {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 3px;
+  margin: 5px;
+  box-shadow: 4px 4px 5px #888888;
+}
+.reviewer{
+  text-align: right;
+}

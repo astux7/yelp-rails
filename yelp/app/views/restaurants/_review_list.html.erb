@@ -1,0 +1,9 @@
+<div class='row'>
+  <% @restaurant.reviews.each do |review| %>
+    <div class='col-sm-6 alert <%= review_color(review) %>'>
+      <h4>Reviewer: <%= review.user.email %></h4>
+      <%= review.name %> - <%= star_rating review %><br />
+      <%= review.content %>
+    </div>
+  <% end %>
+</div>

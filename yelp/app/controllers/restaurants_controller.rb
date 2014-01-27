@@ -17,7 +17,7 @@ class RestaurantsController < ApplicationController
     end
 
     def index
-    	@restaurants = Restaurant.all
+    	@restaurants = Restaurant.all.order('promoted DESC')
     end
 
     def edit 
