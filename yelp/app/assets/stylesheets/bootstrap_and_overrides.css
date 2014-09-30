@@ -15,3 +15,29 @@
   .well h3{
     text-align: center;
   }
+  .nav-pills > li > a:hover{
+    background-color: #428BCA;
+    color: white;
+  }
+
+ .container > .row > .col-lg-9 > .page-header > h1 {
+    font-size: 36px;
+    color: #428BCA;
+  }
+
+  .well h3 {
+    color: #428BCA;
+  }
+
+  .well {
+    background: none repeat scroll 0% 0% #E5F2FF;
+    border: 1px solid #7FBFFF;
+  }
+  footer {
+    background: none repeat scroll 0% 0% #E5F2FF;
+    border-top: 2px solid #7FBFFF;
+    border-bottom: 2px solid #7FBFFF;
+    padding: 10px;
+    vertical-align: middle;
+    text-align: center;
+  }

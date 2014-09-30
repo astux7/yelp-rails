@@ -17,7 +17,7 @@ describe 'retaurants index' do
 		it 'has individual pages for each restaurant' do
 	        visit '/restaurants'
 
-	        click_link @mcd.id
+	        click_link @mcd.name
 	        expect(page).to have_content 'Restaurant page for Nandos'
 	    end
 

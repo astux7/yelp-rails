@@ -5,34 +5,36 @@
 </div>
 
 <div class='row'>
+  <% if @restaurants.none? %>
+    <p class="text-center"> No restaurants yet!</p>
+  <% else %>
+    <% @restaurants.each do |restaurant| %>
 
- <% @restaurants.each do |restaurant| %>
+      <div class='col-sm-5 restaurant <%= restaurant.promoted == true ? "promoted" : "not-promoted" %>'>
+        
+        <a href="<%= restaurant_path(restaurant)%>">
 
-  <div class='col-sm-5 restaurant <%= restaurant.promoted == true ? "promoted" : "not-promoted" %>'>
-    
-    <a href="<%= restaurant_path(restaurant)%>">
+          <span class="stars"> <%= star_rating restaurant %></span>
+          <h4><%= restaurant.name %> </h4>
+         
+          <div class='restaurant-image'>
+           
+            <% if !restaurant.image_url.blank? %>
+            <img src="<%=  restaurant.image_url %>" />
+            <% else %>
+            <%= image_tag "no-photo.jpg" %>
+            <% end %>
+            <p><%= truncate restaurant.description, length: 140 %></p>
+          </div>
 
-      <span class="stars"> <%= star_rating restaurant %></span>
-      <h4><%= restaurant.name %> </h4>
-     
-      <div class='restaurant-image'>
-       
-        <% if !restaurant.image_url.blank? %>
-        <img src="<%=  restaurant.image_url %>" />
-        <% else %>
-        <%= image_tag "no-photo.jpg" %>
-        <% end %>
-        <p><%= truncate restaurant.description, length: 140 %></p>
+          <span class="time"><%= time_ago_in_words restaurant.created_at %> ago</span>
+          <%= render :partial => 'admin_restaurant_control', :locals => {:restaurant => restaurant} %>
+
+        </a>
+
       </div>
 
-      <span class="time"><%= time_ago_in_words restaurant.created_at %> ago</span>
-      <%= render :partial => 'admin_restaurant_control', :locals => {:restaurant => restaurant} %>
-
-    </a>
-
- </div>
-
-<%end%>
-
+    <%end%>
+  <% end %>
 </div>
 
