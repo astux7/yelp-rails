@@ -3,23 +3,36 @@
   <%- model_class = Restaurant -%>
   <div class="page-header">
     <span class='rating'> <%= star_rating @restaurant %></span>
-      <h1><%=t '.title', :default => @restaurant.name %><h1>
-        
+      <h1><%=t '.title', :default => @restaurant.name %> 
+      <% if admin_signed_in? %>
+        <%= @restaurant.promoted == true ? image_tag('promoted.png') : ''%>
+      <% end %>
+    <h1>  
   </div>
-<p><%= @restaurant.description %></p>
-  <dl class="dl-horizontal">
-    <% if admin_signed_in? %>
-    <dt><strong><%= model_class.human_attribute_name(:promoted) %>:</strong></dt>
-    <dd><%= @restaurant.promoted == true ? "Yap" : "Nope" %></dd>
+  <div class="restaurant-text">
+    <% unless @restaurant.image_url.blank? %>
+      <img class="description-img" src="<%= @restaurant.image_url %>">
+    <% else %>
+      <%= image_tag "no-photo.jpg", class: "description-img" %>
     <% end %>
+    <%= simple_format @restaurant.description %></div>
+  <dl class="dl-horizontal">
 
-    <dt><img class="logo" src="<%= @restaurant.image_url %>"></dt>
-    <dd><%= render :partial => 'map_restaurant', :locals => {:restaurant => @restaurant} %>
-    </dd>
-    <!-- <dt><strong><%= model_class.human_attribute_name(:address) %>:</strong></dt>
-    <dd><%= @restaurant.address %></dd>-->
-
+  <dt>
+     <h4><%= model_class.human_attribute_name(:address) %>:</h4>
+     <h5><%=  @restaurant.address %></h5>
+     <h4><%= model_class.human_attribute_name(:price_range) %>:</h4>
+     <h5><%= @restaurant.price_range %></h5>
+     <h4><%= model_class.human_attribute_name(:opening_hours) %>:</h4>
+     <h5>
+      <%= simple_format @restaurant.opening_hours  %>
+      </h5>
+  </dt>
+    <dd><p><%= render :partial => 'map_restaurant', :locals => {:restaurant => @restaurant} %>
+    </p></dd>
+   
   </dl>
+  
   <hr/>
 
   <% if user_signed_in? && !current_user.reviewed?(@restaurant) %>

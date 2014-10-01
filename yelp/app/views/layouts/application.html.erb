@@ -96,7 +96,7 @@
       </div><!--/row-->
 
       <footer>
-        <p>&copy; Asta B. 2014 <%= link_to 'Sign in as Admin', new_admin_session_path %></p> 
+        <p>&copy; Asta B. 2014 <% if !admin_signed_in? %><%= link_to 'Sign in as Admin', new_admin_session_path %><% end %></p> 
       </footer>
 
     </div> <!-- /container -->

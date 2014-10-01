@@ -87,4 +87,15 @@
 }
 .text-center {
   text-align: center;
+
+}
+.restaurant-text {
+  vertical-align: top;
+  min-height: 220px;
+  .description-img {
+    max-width: 220px;
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
 }

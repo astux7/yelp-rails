@@ -21,7 +21,7 @@
   <div class="control-group">
     <%= f.label :description, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :description, :class => 'text_field' %>
+      <%= f.text_area :description, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
@@ -44,7 +44,19 @@
    <div class="control-group">
     <%= f.label :address, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :address, :class => 'text_field' %>
+      <%= f.text_area :address, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :price_range, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :price_range, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :opening_hours, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :opening_hours, :class => 'text_field' %>
     </div>
   </div>
 <hr>
