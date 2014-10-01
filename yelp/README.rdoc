@@ -1,28 +1,11 @@
-== README
+Yelp
+______________
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+idea is to have similar system of restaurant page and reviews, search by location and tag.
 
-Things you may want to cover:
++ Admin can add new restaurant (admin have a domain name specific), delete user review
++ User can put reviews (only on per restaurant)
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+future:
+Implemented seach by tag 
+seach by location
