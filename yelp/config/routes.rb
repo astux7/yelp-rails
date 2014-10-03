@@ -7,5 +7,9 @@ Rails.application.routes.draw do
   resources :restaurants do
     resources :reviews
   end
+
+  resources :tags do 
+    resources :restaurants
+  end
   
 end

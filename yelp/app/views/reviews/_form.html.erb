@@ -1,32 +1,31 @@
-<%= form_for [@restaurant, @review], :html => { :class => 'form-horizontal' } do |f| %>
+<%= form_for [@restaurant, @review], html: { class: 'form-horizontal' } do |f| %>
   <div class="control-group">
-    <%= f.label :name, :class => 'control-label' %>
+    <%= f.label :name, class: 'control-label' %>
     <div class="controls">
-      <%= f.text_field :name, :class => 'text_field' %>
+      <%= f.text_field :name, class: 'text_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :content, :class => 'control-label' %>
+    <%= f.label :content, class: 'control-label' %>
     <div class="controls">
-      <%= f.text_area :content, :class => 'text-area' %>
+      <%= f.text_area :content, class: 'text-area' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :rating, :class => 'control-label' %>
+    <%= f.label :rating, class: 'control-label' %>
     <div class="controls">
       <%= f.select :rating, options_for_select(@review.valid_ratings), include_blank: 'Select a rating' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :restaurant_id, :class => 'control-label' %> : 
-      <%= f.label @restaurant.name, :class => '' %>
+    <%= f.label :restaurant_id, class: 'control-label' %> : 
+      <%= f.label @restaurant.name %>
 
   </div>
-  
   <hr>
   
   <%= f.submit nil, :class => 'btn btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-             restaurant_path(@restaurant), :class => 'btn btn-default' %>
+             restaurant_path(@restaurant), class: 'btn btn-default' %>
  
 <% end %>

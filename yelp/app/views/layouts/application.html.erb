@@ -58,6 +58,20 @@
            <li class="<%='active' if current_page?(edit_admin_registration_path)%>"><%= link_to('Edit profile', edit_admin_registration_path) %></li>
             <li><%= link_to('Logout Admin', destroy_admin_session_path, :method => :delete) %></li>
         <% end %>
+      <%= form_for :tags , html: { class: 'form-horizontal' } do |f| %>
+        <%= f.text_field :tag_seach, id: 'tag_input' %>
+        <%= f.submit 'Go!' %>
+      <% end %>
+      <%= javascript_tag do %>
+      var tags = <%= raw @tag_list.to_json %>;
+      $('#tag_input').inputosaurus({
+          width : '350px',
+          autoCompleteSource : tags,
+          activateFinalResult : true
+          });
+        <% end %>
+
+
    </ul>
 
     <div class="container">

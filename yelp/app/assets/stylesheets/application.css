@@ -11,8 +11,10 @@
  * file per style scope.
  *
  *= require_bootstrap_and_overrides
+ *= require inputosaurus
  *= require_tree .
  *= require_self
+
  */
  footer {
  	height: 40px;

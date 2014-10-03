@@ -16,18 +16,28 @@
       <%= image_tag "no-photo.jpg", class: "description-img" %>
     <% end %>
     <%= simple_format @restaurant.description %></div>
+    <div>
+    <% if @restaurant.tags.any? %>
+      <% @restaurant.tags.each do |tag| %>
+        <%= link_to tag, tag_restaurants_path(tag) %>
+      <% end %>
+    <% end %>
+    </div>
+
+
+
   <dl class="dl-horizontal">
 
-  <dt>
-     <h4><%= model_class.human_attribute_name(:address) %>:</h4>
-     <h5><%=  @restaurant.address %></h5>
-     <h4><%= model_class.human_attribute_name(:price_range) %>:</h4>
-     <h5><%= @restaurant.price_range %></h5>
-     <h4><%= model_class.human_attribute_name(:opening_hours) %>:</h4>
-     <h5>
-      <%= simple_format @restaurant.opening_hours  %>
-      </h5>
-  </dt>
+    <dt>
+       <h4><%= model_class.human_attribute_name(:address) %>:</h4>
+       <h5><%=  @restaurant.address %></h5>
+       <h4><%= model_class.human_attribute_name(:price_range) %>:</h4>
+       <h5><%= @restaurant.price_range %></h5>
+       <h4><%= model_class.human_attribute_name(:opening_hours) %>:</h4>
+       <h5>
+        <%= simple_format @restaurant.opening_hours  %>
+        </h5>
+    </dt>
     <dd><p><%= render :partial => 'map_restaurant', :locals => {:restaurant => @restaurant} %>
     </p></dd>
    
